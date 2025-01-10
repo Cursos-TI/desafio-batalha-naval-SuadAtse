@@ -9,15 +9,23 @@ int main() {
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-    char *tabuleiro[5][5] = {
-        {"n/a", "n/a", "A1", "n/a", "n/a"},
-        {"n/a", "n/a", "A2", "n/a", "n/a"},
-        {"n/a", "n/a", "A3", "n/a", "n/a"},
-        {"n/a", "n/a", "A4", "n/a", "n/a"},
-        {"n/a", "B1", "B2", "B3", "B4"}
+    int tabuleiro[10][10] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 3, 0, 0, 0},
+        {0, 0, 0, 0, 3, 0, 0, 3, 0, 0},
+        {0, 0, 0, 0, 3, 0, 0, 0, 3, 0},
+        {0, 0, 0, 0, 3, 0, 0, 0, 0, 3},
+        {0, 0, 0, 0, 3, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 3, 0, 3, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 3, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 3, 0},
+        {3, 3, 3, 3, 3, 0, 0, 0, 0, 3}
     };
-    printf("O navio na vertical começa em %s e termina em %s\n",tabuleiro[0][2], tabuleiro[3][2]);
-    printf("O navio na horizontal começa em %s e termina em %s\n",tabuleiro[4][1], tabuleiro[4][4]);
+    for (int i = 0; i < 10; i++){
+        for (int j = 0; j < 10; j++){
+            printf("A matris de posição [%d][%d] é = %s \n",i, j, (tabuleiro[i][j] == 3)?"Ocupado":"Livre");
+        }
+    }
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
